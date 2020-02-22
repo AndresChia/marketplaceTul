@@ -9,7 +9,8 @@ import {
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { StorageService } from '../storage/storage.service';
-
+import { map } from "rxjs/operators";
+import { isNullOrUndefined } from 'util';
 
 
 @Injectable({
@@ -22,19 +23,23 @@ export class LoginGuard implements CanActivate {
     private storage: StorageService
   ) { }
 
-  async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const user = await this.storage.get("USER");
-    const local = window.localStorage.getItem("USER");
-    if (user || local) {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+
+    return this.afAuth.authState.pipe(map(auth => {
+      if (isNullOrUndefined(auth)) {
+        if (state.url === "/login") {
+          return true;
+        }
+        this.router.navigate(["/login"])
+        return false;
+      }
+
+      if (state.url === "/login") {
+        this.router.navigate(["home"])
+      }
+
       return true;
-    }
+    }))
 
-    if (state.url === "/login") {
-      return true;
-
-    }
-
-    this.router.navigate(['login']);
-    return false;
   }
 }

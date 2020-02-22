@@ -39,7 +39,7 @@ export class SesionComponent implements OnInit {
 
   async validarSesion() {
     const user = await this.storage.get("USER");
-    const local= window.localStorage.getItem("USER");
+    const local= localStorage.getItem("USER");
     if(user || local){
       this.router.navigate(['home']);
     }
@@ -90,9 +90,10 @@ export class SesionComponent implements OnInit {
 
   iniciarSesion() {
     if (this.datosLogIn.email !== "" && this.datosLogIn.contrasena !== "") {
-      this._AuthService.iniciarSesion(this.datosLogIn).then(async (resolve) => {
+      this._AuthService.iniciarSesion(this.datosLogIn).then(async ({user:{uid}}) => {
         await sessionStorage.setItem('USER', JSON.stringify(this.datosLogIn));
-        window.localStorage.setItem('USER', JSON.stringify(this.datosLogIn));
+        localStorage.setItem('fireUser', JSON.stringify(uid));
+        localStorage.setItem('USER', JSON.stringify(this.datosLogIn));
         this.router.navigate(['home']);
       }).catch(({ code, message }) => {
         this.mostrarModal = true;

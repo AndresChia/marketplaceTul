@@ -1,0 +1,19 @@
+.contenedorSlides{
+    margin-top: 60px;
+    .ionContentCategorias{
+        height: 75px;
+    }
+}
+
+.slideCategorias {
+    height: 71px;
+    ion-card{
+        width: 100%;
+        height: calc(100% - 10px);
+        position: relative;
+        padding: 7px;
+    }
+    
+}
+
+

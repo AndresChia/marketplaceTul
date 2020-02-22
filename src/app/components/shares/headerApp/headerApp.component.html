@@ -1,3 +1,38 @@
-<p>
-  headerApp works!
-</p>
+<div class="contenedor-headerApp">
+
+  <div class="opcionMenu menuHam">
+
+    <img src="../../../../assets/image/user.png" alt="" id="main" (click)="abrirMenu()">
+
+  </div>
+
+  <div class="opcionMenu "></div>
+
+  <div class="opcionMenu shop">
+    <img src="../../../../assets/image/shop.png" alt="">
+
+  </div>
+
+
+</div>
+
+
+<ion-menu side="start" menuId="first" contentId="main" style="position: absolute;z-index: +9999999;height: 800px;">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Start Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <button (click)="cerrarSesion.emit()">cerrar sesion</button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet id="first" style="visibility: hidden;"></ion-router-outlet>

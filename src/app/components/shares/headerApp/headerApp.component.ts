@@ -1,15 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+
 
 @Component({
-  selector: 'app-headerApp',
+  selector: 'headerAppComponent',
   templateUrl: './headerApp.component.html',
-  styleUrls: ['./headerApp.component.css']
+  styleUrls: ['./headerApp.component.scss']
 })
 export class HeaderAppComponent implements OnInit {
 
-  constructor() { }
+
+  @Output() cerrarSesion = new EventEmitter<any>();
+
+
+  constructor(private menu: MenuController) {
+
+
+  }
 
   ngOnInit() {
   }
 
+  abrirMenu(){
+    this.menu.open('first');
+  }
+
 }
+
+
+

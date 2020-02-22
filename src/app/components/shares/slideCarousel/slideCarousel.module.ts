@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderAppComponent } from './headerApp.component';
+import { SlideCarouselComponent } from './slideCarousel.component';
 import { IonicModule } from '@ionic/angular';
 
 @NgModule({
-  exports: [HeaderAppComponent],
+  exports: [SlideCarouselComponent],
   imports: [
     CommonModule,
     IonicModule
   ],
-  declarations: [HeaderAppComponent]
+  declarations: [SlideCarouselComponent]
 })
-export class HeaderAppModule { }
+export class SlideCarouselModule { }
