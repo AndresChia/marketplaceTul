@@ -1,8 +1,53 @@
 .contenedorSlides{
-    margin-top: 60px;
+    margin-top: 5px;
     .ionContentCategorias{
         height: 75px;
     }
+
+
+
+    img{
+        width: 145px;
+    }
+
+
+    .contenedorIon{
+        height: 369px;
+
+
+
+
+   
+
+
+        .contenedorUnidades{
+            top: 17px;
+            left: 18px;
+            position: absolute;
+
+          
+
+            ion-label{
+                position: absolute;
+                z-index: 99;
+                top: 34px;
+                font-size: 0.8rem;
+                left: 2px;
+            }
+
+            ion-item{
+                ion-select{
+                    padding-left: 0px;
+                    .select-text{
+                        color: black;
+                        opacity: unset;
+                    }
+                }
+            }
+            
+        }
+    }
+
 }
 
 .slideCategorias {

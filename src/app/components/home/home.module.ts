@@ -5,6 +5,9 @@ import { HomeComponent } from './home.component';
 import { homeRoutingModule } from "./home-routing.module";
 import { HeaderAppModule } from '../shares/headerApp/headerApp.module';
 import { SlideCarouselModule } from '../shares/slideCarousel/slideCarousel.module';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { ModalMensajeModule } from '../shares/modal-mensaje/modal-mensaje.module';
 
 @NgModule({
   exports: [HomeComponent],
@@ -12,7 +15,10 @@ import { SlideCarouselModule } from '../shares/slideCarousel/slideCarousel.modul
     CommonModule,
     homeRoutingModule,
     HeaderAppModule,
-    SlideCarouselModule
+    SlideCarouselModule,
+    FormsModule,
+    IonicModule,
+    ModalMensajeModule
   ],
   declarations: [HomeComponent]
 })

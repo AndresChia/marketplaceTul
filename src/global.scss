@@ -28,6 +28,7 @@
 
 
 
+
 @font-face {
     font-family: 'Montserrat-bold';
     src: local('Montserrat-bold'), url(./Assets/Fonts/Montserrat-Bold.ttf) format('truetype');
@@ -56,23 +57,15 @@
 
 input{
   margin: 0px 0px 25px;
-  display: block;
-  border: none;
-  padding: 10px 0;
-  border-bottom: solid 1px white;
-  -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(96%, rgba(255, 255, 255, 0)), color-stop(4%, white));
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, white 4%);
-  background-position: -200px 0;
-  background-size: 200px 100%;
-  background-repeat: no-repeat;
-  color: white;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid black;
 }
 
 
+
 modal-mensaje::before{
-    z-index: 0;
+    z-index: +9999;
     content:"";
     position:absolute;
     top:0;

@@ -1,20 +1,29 @@
 <div id="component-crearCuenta">
-    <div class="contentInput">
-        <span>Correo electronico:</span>
+
+
+
+    <div style="    height: 19px;">
+        <span style="color: black">{{datos.email ? 'Correo electronico:' : ''}} </span>
     </div>
-    <input type="email" name="text" id="email-login" [(ngModel)]="datos.email" autocomplete="off">
+
+    <input type="email" class="email" name="email" [(ngModel)]="datos.email" placeholder="Correo electronico"
+        required="required">
 
 
-    <div class="contentInput">
-        <span>Contraseña:</span>
+
+    <div style="height: 19px;">
+        <span style="color: black">{{datos.contrasena ? 'Contraseña:' : '' }} </span>
     </div>
-    <input type="password" name="password" id="password-login" [(ngModel)]="datos.contrasena" autocomplete="off">
 
-    <div class="contentInput">
-        <span>Repetir contraseña:</span>
+    <input type="password" class="password" name="password" [(ngModel)]="datos.contrasena" placeholder="Contraseña"
+        required="required">
+ 
+
+    <div style="height: 19px;">
+        <span style="color: black">{{datos.repcontrasena ? 'Repetir contraseña:' : '' }} </span>
     </div>
-    <input type="password" name="password" id="password-login" [(ngModel)]="datos.repcontrasena" autocomplete="off">
 
-
+    <input type="password" class="password" name="password" [(ngModel)]="datos.repcontrasena" placeholder="Repetir contraseña"
+        required="required">
 
 </div>

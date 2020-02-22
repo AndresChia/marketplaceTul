@@ -4,10 +4,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  exports:[LoginComponent],
+  exports: [LoginComponent],
   imports: [
     MatGridListModule,
-    FormsModule,
+    FormsModule
   ],
   declarations: [LoginComponent]
 })

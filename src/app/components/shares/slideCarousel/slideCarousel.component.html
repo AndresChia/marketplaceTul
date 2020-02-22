@@ -1,91 +1,75 @@
 <div class="contenedorSlides">
 
 
-  <ion-content class="ionContentCategorias" >
+  <!-- <ion-content class="ionContentCategorias" >
     <ion-slides scroll="true">
       <ng-container *ngFor="let valor of listaValores,let i=index ">
-        <ion-slide class="slideCategorias">
-          <ion-card (click)="expression">
+        <ion-slide class="slideCategorias " >
+          <ion-card (click)="expression" style="    width: 205px; ">
             <img [src]="valor.imagen">
           </ion-card>
         </ion-slide>
       </ng-container>
     </ion-slides>
-  </ion-content>
+  </ion-content> -->
 
 
 
 
 
 
-  <ion-content style="height: 204px;">
+  <ion-content class="contenedorIon">
     <ion-slides>
-      <ion-slide>
+      <ion-slide *ngFor="let item of listaValores.lista,let i=index" scrollbar="true" pager="true">
+
+
+
+
+        <div class="contenedorUnidades">
+          <ion-label>Cantidad</ion-label>
+          <ion-item>
+            <ion-select placeholder="0" [(ngModel)]="unidades[i] ">
+              <ion-select-option value="0">0</ion-select-option>
+              <ion-select-option value="1">1</ion-select-option>
+              <ion-select-option value="2">2</ion-select-option>
+              <ion-select-option value="3">3</ion-select-option>
+              <ion-select-option value="4">4</ion-select-option>
+              <ion-select-option value="5">5</ion-select-option>
+              <ion-select-option value="6">6</ion-select-option>
+              <ion-select-option value="7">7</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+
+
+        <div class="contenedorPrecio">
+
+          
+        </div>
+
+
         <ion-card>
+          <img src="{{item.imagen}}" />
           <ion-card-header>
-            <ion-card-subtitle>titulo</ion-card-subtitle>
-            <ion-card-title>aa</ion-card-title>
+            <ion-card-title>{{item.nombre}}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
             Keep close to Nature's heart... and break clear away, once in awhile,
             and climb a mountain or spend a week in the woods. Wash your spirit clean.
           </ion-card-content>
-        </ion-card>
-      </ion-slide>
 
-      <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>titulo</ion-card-subtitle>
-            <ion-card-title>titulo</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
-          </ion-card-content>
+          <ion-button
+            [color]="item.unidadesDisponibles===0 ? 'danger': (item.unidadesDisponibles>=3 ? 'primary' : 'warning') "
+            [disabled]="item.unidadesDisponibles===0 ? true: false" expand="full" fill="outline" (click)="agregarAlcarrito(i)">
+            {{item.unidadesDisponibles===0 ? 'Agotado': (item.unidadesDisponibles>=3 ? 'Comprar' : 'Pocas unidades')  }}
+          </ion-button>
+
+
         </ion-card>
       </ion-slide>
 
 
-      <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>titulo</ion-card-subtitle>
-            <ion-card-title>titulo</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
 
-
-      <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>titulo</ion-card-subtitle>
-            <ion-card-title>titulo</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>titulo</ion-card-subtitle>
-            <ion-card-title>titulo</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
 
     </ion-slides>
   </ion-content>

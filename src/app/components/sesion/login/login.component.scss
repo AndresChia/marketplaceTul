@@ -6,14 +6,25 @@
         // width: calc(100% - 30px);
         // display: inline-flex;
         width: 100%; 
+        color: black;
     }
     .contentInput{
-        color: white;
+        color: black;
+    }
+
+    .contenedorImg{
+        text-align: center;
+        .imgLogo{
+            width: 79px;
+            text-align: center;
+            top: -33px;
+            position: relative;
+        }
     }
 }
 
 ::placeholder {
-    color: white;
+    color: black;
   }
 
 // .contentInput{
@@ -34,4 +45,5 @@
 //     border: 1px solid #ced4da;
 //     border-radius: 0.25rem;
 // }
+
 

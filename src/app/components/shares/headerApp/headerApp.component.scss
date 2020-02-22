@@ -16,6 +16,24 @@
 
     .opcionMenu.shop{
 
+
+        .contenedorNumeroCompras{
+            position: absolute;
+            color: white;
+            right: 10px;
+            background: red;
+            width: 24px;
+            height: 24px;
+            border-radius: 49%;
+            text-align: center;
+            z-index: 1;
+            top: 4px;
+            span{
+                top: 3px;
+                position: relative;
+            }
+        }
+
         img{
             position: relative;
             left: calc(100% - 56px);

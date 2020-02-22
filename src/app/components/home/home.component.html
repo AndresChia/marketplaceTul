@@ -1,4 +1,29 @@
 <div class="contenedorHome">
-    <headerAppComponent class="headerComponent" (cerrarSesion)="cerrarSesion()" ></headerAppComponent>
-    <slideCarouselComponent [listaValores]="listaCategorias"></slideCarouselComponent>    
+    <headerAppComponent class="headerComponent" (cerrarSesion)="cerrarSesion()"></headerAppComponent>
+
+    <div class="contenedorCarouselCategorias">
+        <ng-container *ngFor="let categoria of listaCategorias,let i=index">
+            <ion-card class="ionCardCategoria" (click)="selecionarCategoria(i) ">
+                <img [src]="categoria.imagen">
+            </ion-card>
+        </ng-container>
+    </div>
+
+    <div>
+        <h1>{{listaCategorias[categoriaSelecionada].nombre}} </h1>
+    </div>
+
+    <slideCarouselComponent [listaValores]="listaCategorias[categoriaSelecionada]"
+        (AgregarAlCarrito)="AgregarAlCarrito($event)"></slideCarouselComponent>
+
+    <ion-footer>
+        
+    </ion-footer>
+
+
 </div>
+
+
+<ng-container *ngIf="mostrarModal">
+    <modal-mensaje (cerrarPopUp)="cerrarPopUp()" [mensaje]="mensaje"></modal-mensaje>
+</ng-container>

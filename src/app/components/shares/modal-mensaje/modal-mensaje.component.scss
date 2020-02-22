@@ -6,6 +6,7 @@
     top: 50%;
     left: 50%;
     transform: 'none' ;
+    z-index: +99999;
     .cuerpo{
         display: flex;
         flex-direction: column;

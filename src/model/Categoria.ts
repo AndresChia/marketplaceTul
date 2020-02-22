@@ -5,6 +5,7 @@ interface listaDato {
     descripcion: string;
     unidadesDisponibles: number;
     precio: number;
+    imagen: string;
 }
 
 export interface Categoria {
