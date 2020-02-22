@@ -8,6 +8,7 @@ import { HeaderSesionModule } from './headerSesion/headerSesion.module';
 import { FooterSesionModule } from './footerSesion/footerSesion.module';
 import { CrearCuentaModule } from './crearCuenta/crearCuenta.module';
 
+import { ModalMensajeModule } from "./../shares/modal-mensaje/modal-mensaje.module";
 @NgModule({
   imports: [
     CommonModule,
@@ -15,7 +16,8 @@ import { CrearCuentaModule } from './crearCuenta/crearCuenta.module';
     LoginModule,
     HeaderSesionModule,
     FooterSesionModule,
-    CrearCuentaModule
+    CrearCuentaModule,
+    ModalMensajeModule
   ],
   declarations: [SesionComponent]
 })

@@ -5,7 +5,12 @@
 </ng-container>
 
 <ng-template #signUp>
-    <crearCuentaComponent class="componente-Contenido"></crearCuentaComponent>
+    <crearCuentaComponent class="componente-Contenido" [datos]="datosCrearCuenta"></crearCuentaComponent>
 </ng-template>
 
-<footerSesionComponent [opcionActiva]="opcionActiva" (registrarseButton)="registrarse($event)" (iniciarSesionButton)="iniciarSesion($event)"  ></footerSesionComponent>
+<footerSesionComponent [opcionActiva]="opcionActiva" (registrarseButton)="registrarse($event)"
+    (iniciarSesionButton)="iniciarSesion($event)"></footerSesionComponent>
+
+<ng-container *ngIf="mostrarModal">
+    <modal-mensaje (cerrarPopUp)="cerrarPopUp()" [mensaje]="mensajePopUp" ></modal-mensaje>
+</ng-container>

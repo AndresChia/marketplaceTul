@@ -1,5 +1,20 @@
 <div id="component-crearCuenta">
+    <div class="contentInput">
+        <span>Correo electronico:</span>
+    </div>
+    <input type="email" name="text" id="email-login" [(ngModel)]="datos.email" autocomplete="off">
 
- 
+
+    <div class="contentInput">
+        <span>Contraseña:</span>
+    </div>
+    <input type="password" name="password" id="password-login" [(ngModel)]="datos.contrasena" autocomplete="off">
+
+    <div class="contentInput">
+        <span>Repetir contraseña:</span>
+    </div>
+    <input type="password" name="password" id="password-login" [(ngModel)]="datos.repcontrasena" autocomplete="off">
+
+
 
 </div>

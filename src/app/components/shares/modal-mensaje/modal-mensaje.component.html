@@ -1,0 +1,19 @@
+<div #elementoContenedor class="contenedorModal" [ngStyle]="getStyles(elementoContenedor)">
+  <ion-content>
+    <div class="contenedorPrincipal">
+      <div class="cuerpo">
+        <div class="contenedorImagen">
+          <ion-img src="../../../assets/image/icoError.png"></ion-img>
+        </div>
+        <ion-label class="titulo">
+          {{mensaje}}
+        </ion-label>
+      </div>
+    </div>
+  </ion-content>
+  
+  <div class="contenedorBotones" (click)="accionBotonCerrar()" >
+    <ion-label class="botones" color="secondary" >Cerrar</ion-label>
+  </div>
+</div>
+

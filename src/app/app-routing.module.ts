@@ -6,7 +6,12 @@ import { LoginGuard } from "./../services/autentication/login.guard";
 const routes: Routes = [
   {
     path: 'login',
-    loadChildren: () => import('./components/sesion/sesion.module').then( m => m.SesionModule),
+    loadChildren: () => import('./components/sesion/sesion.module').then(m => m.SesionModule),
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule),
     canActivate: [LoginGuard]
   },
   {
@@ -26,4 +31,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

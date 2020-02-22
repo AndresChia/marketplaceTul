@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'crearCuentaComponent',
@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crearCuenta.component.scss']
 })
 export class CrearCuentaComponent implements OnInit {
+
+
+  email;
+  contrasena;
+
+  @Input() datos;
+
 
   constructor() { }
 

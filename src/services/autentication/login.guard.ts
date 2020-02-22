@@ -8,6 +8,7 @@ import {
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
+import { StorageService } from '../storage/storage.service';
 
 
 
@@ -17,10 +18,23 @@ import * as firebase from 'firebase/app';
 export class LoginGuard implements CanActivate {
   constructor(
     private router: Router,
-    private afAuth: AngularFireAuth
+    private afAuth: AngularFireAuth,
+    private storage: StorageService
   ) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return true;
+  async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    const user = await this.storage.get("USER");
+    const local = window.localStorage.getItem("USER");
+    if (user || local) {
+      return true;
+    }
+
+    if (state.url === "/login") {
+      return true;
+
+    }
+
+    this.router.navigate(['login']);
+    return false;
   }
 }
