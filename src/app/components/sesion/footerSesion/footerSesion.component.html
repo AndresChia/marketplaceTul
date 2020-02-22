@@ -1,0 +1,11 @@
+<div class="ContenedorLogInButton">
+
+  <ng-container *ngIf="opcionActiva==='LogIn'; else signUp">
+    <button (click)="iniciarSesionButton.emit(true)">Iniciar Sesión</button>
+  </ng-container>
+
+  <ng-template #signUp>
+    <button (click)="registrarseButton.emit(true)">Registrarse</button>
+  </ng-template>
+
+</div>

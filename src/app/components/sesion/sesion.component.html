@@ -1,0 +1,11 @@
+<headerSesionComponent [opcionActiva]="opcionActiva" (cambioOpcion)="cambioOpcion($event)"></headerSesionComponent>
+
+<ng-container *ngIf="opcionActiva==='LogIn'; else signUp">
+    <loginComponent class="componente-Contenido" [datos]="datosLogIn"></loginComponent>
+</ng-container>
+
+<ng-template #signUp>
+    <crearCuentaComponent class="componente-Contenido"></crearCuentaComponent>
+</ng-template>
+
+<footerSesionComponent [opcionActiva]="opcionActiva" (registrarseButton)="registrarse($event)" (iniciarSesionButton)="iniciarSesion($event)"  ></footerSesionComponent>

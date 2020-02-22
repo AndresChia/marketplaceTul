@@ -1,0 +1,85 @@
+{
+    "categorias": {
+        "carros": [
+            {
+                "id": "1",
+                "descripcion": "desc1",
+                "nombre": "carro1"
+            },
+            {
+                "id": "2",
+                "descripcion": "desc2",
+                "nombre": "carro2"
+            },
+            {
+                "id": "3",
+                "descripcion": "desc3",
+                "nombre": "carro3"
+            },
+            {
+                "id": "4",
+                "descripcion": "desc4",
+                "nombre": "carro4"
+            },
+            {
+                "id": "5",
+                "descripcion": "desc5",
+                "nombre": "carro5"
+            }
+        ],
+        "muebles": [
+            {
+                "id": "1",
+                "descripcion": "desc1",
+                "nombre": "muebles1"
+            },
+            {
+                "id": "2",
+                "descripcion": "desc2",
+                "nombre": "muebles2"
+            },
+            {
+                "id": "3",
+                "descripcion": "desc3",
+                "nombre": "muebles3"
+            },
+            {
+                "id": "4",
+                "descripcion": "desc4",
+                "nombre": "muebles4"
+            },
+            {
+                "id": "5",
+                "descripcion": "desc5",
+                "nombre": "muebles5"
+            }
+        ],
+        "alimentos": [
+            {
+                "id": "1",
+                "descripcion": "desc1",
+                "nombre": "alimento1"
+            },
+            {
+                "id": "2",
+                "descripcion": "desc2",
+                "nombre": "alimentos2"
+            },
+            {
+                "id": "3",
+                "descripcion": "desc3",
+                "nombre": "alimentos3"
+            },
+            {
+                "id": "4",
+                "descripcion": "desc4",
+                "nombre": "alimentos4"
+            },
+            {
+                "id": "5",
+                "descripcion": "desc5",
+                "nombre": "alimentos5"
+            }
+        ]
+    }
+}

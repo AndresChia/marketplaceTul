@@ -1,5 +1,7 @@
 {
   "name": "marketplaceTul",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,21 @@
+.ContenedorLogInButton {
+    border: 1px solid lightslategray;
+
+    button{
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        width: 100%;
+        line-height: 15px;
+        min-height: 60px !important;
+        color: white;
+        background: #040f44;
+        background: -webkit-gradient(linear, left top, right top, from(#333c6d), to(#040f44));
+        background: linear-gradient(to right, #333c6d 0%, #040f44 100%);
+        height: 8vh;
+    }
+}
+
+
+
+

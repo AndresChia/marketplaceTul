@@ -1,0 +1,10 @@
+<div class="panel">
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile (click)="cambiarOpcion('LogIn')">
+      <button ion-button [ngClass]="{'active': opcionActiva=='LogIn'}" >LogIn</button>
+    </mat-grid-tile>
+    <mat-grid-tile (click)="cambiarOpcion('signUp')">
+      <button ion-button [ngClass]="{'active': opcionActiva=='signUp'}" >Registrarse</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

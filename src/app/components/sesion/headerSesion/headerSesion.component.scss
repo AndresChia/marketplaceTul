@@ -1,0 +1,33 @@
+
+.panel {
+
+    button{
+        background: transparent;
+        color: aliceblue;
+    }
+
+    button.active::after{
+        position: absolute;
+        content: " ";
+        border: 1px solid #DCB975;
+        width: 40% !important;
+        bottom: 31px;
+        left: 30%;
+        opacity: 0.9;
+    }
+
+    mat-grid-list{
+        background-color: #040f44;;
+    }
+
+    mat-grid-list::after{
+        position: absolute;
+        content: " ";
+        border: 1px solid rgb(243, 242, 240);
+        width: 80% !important;
+        bottom: 1px;
+        left: 10%;
+        opacity: 0.9;
+    }
+
+}
