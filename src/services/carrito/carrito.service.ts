@@ -22,11 +22,15 @@ export class CarritoService {
 
 
   agregarProducto(producto, cantidad) {
-    debugger
-
     this.numeroDeProductos += cantidad;
     this.precioAcumulado += (cantidad * producto.precio);
-    this.mapaProducto.set(producto.nombre, { producto, cantidad })
+
+    if (this.mapaProducto.get(producto.nombre)) {
+      let cantidadAnterior = this.mapaProducto.get(producto.nombre).cantidad;
+      this.mapaProducto.set(producto.nombre, { producto, cantidad: cantidad + cantidadAnterior })
+    } else {
+      this.mapaProducto.set(producto.nombre, { producto, cantidad })
+    }
 
     this.carritoSubscribe.next({ mapaProducto: this.mapaProducto, precioAcumulado: this.precioAcumulado, numeroDeProductos: this.numeroDeProductos });
   }
@@ -39,10 +43,20 @@ export class CarritoService {
     if (productoActual.cantidad <= 0) {
       this.mapaProducto.delete(producto.nombre);
     }
-
     this.carritoSubscribe.next({ mapaProducto: this.mapaProducto, precioAcumulado: this.precioAcumulado, numeroDeProductos: this.numeroDeProductos });
   }
 
+  getMapa() {
+    return this.mapaProducto;
+  }
+
+  getNumeroDeProductos() {
+    return this.numeroDeProductos;
+  }
+
+  getPrecioAcumulado() {
+    return this.precioAcumulado;
+  }
 
   subscribe = (callback: (e: UIEvent) => void) => this.carritoSubscribe.subscribe(callback);
 

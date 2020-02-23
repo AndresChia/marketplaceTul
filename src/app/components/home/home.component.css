@@ -29,8 +29,13 @@
     display: inline-block;
     width: 100px;
     height: 80px;
-    border: 1px solid;
+    border: 1px solid #c7bfbf;
     line-height: 80px;
     text-align: center;
     margin-bottom: 4px;
+}
+
+.categoriaTitleContenedor{
+    box-shadow: 0 0 3px 1px #c1bdbd;
+    text-align: center;
 }

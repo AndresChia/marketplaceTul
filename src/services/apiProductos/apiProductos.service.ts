@@ -14,6 +14,7 @@ export class ApiProductosService {
   private categoriasCollection: AngularFirestoreCollection<any>;
   private categoria: Observable<any[]>;
 
+  expensesCollection: AngularFirestoreCollection<any>;
 
 
   constructor(public db: AngularFirestore) {
@@ -26,6 +27,10 @@ export class ApiProductosService {
 
   getCategorias() {
     return this.categoria = this.db.collection<any>('Categorias').snapshotChanges();
+  }
+
+  getProductosByCategoria(categoria) {
+    return this.categoria = this.db.collection<any>('Categorias', ref => ref.where('tipo', '==', categoria)).snapshotChanges();
   }
 
 }

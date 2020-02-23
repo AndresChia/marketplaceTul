@@ -1,0 +1,35 @@
+
+.contenedorFila{
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 0 2px 1px black;
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+    .centrar{
+        text-align: center;
+    }
+
+    .elementoFilaNombre{
+        width: 36%;
+    }
+
+    .elementoFilaImagen{
+        width: 23%;
+    }
+
+    .elementoFilaprecio{
+        width: 25%;
+    }
+
+    .elementoFilaCantidad{
+        width: 16%;
+    }
+
+    .contenedorImagen{
+        img{
+            width: 50px;
+        }
+    }
+}

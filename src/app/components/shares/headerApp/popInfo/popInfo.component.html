@@ -1,3 +1,25 @@
-<p>
-  popInfo works!
-</p>
+<div>
+  <div class="contenedorFila" *ngFor="let item of compras">
+
+    <div class="elementoFilaNombre">
+      {{item[0]}}
+    </div>
+
+    <div class="elementoFilaImagen contenedorImagen centrar">
+      <img [src]="item[1].producto.imagen" alt="">
+    </div>
+
+    <div class="elementoFilaprecio centrar">
+      <span>$ {{item[1].producto.precio}}</span>
+    </div>
+
+    <div class="elementoFilaCantidad centrar">
+      {{item[1].cantidad}}
+    </div>
+
+  </div>
+
+  <div>
+    Total: ${{total}}
+  </div>
+</div>

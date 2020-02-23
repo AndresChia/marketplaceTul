@@ -21,8 +21,8 @@
 
 <ion-menu side="start" menuId="first" contentId="main" style="position: absolute;z-index: +9999999;height: 800px;">
   <ion-header>
-    <ion-toolbar color="primary">
-      <ion-title>Start Menu</ion-title>
+    <ion-toolbar color="toolColor">
+      <ion-title>Menu Usuario</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
@@ -32,7 +32,8 @@
       <ion-item>Menu Item</ion-item>
       <ion-item>Menu Item</ion-item>
       <ion-item>Menu Item</ion-item>
-      <button (click)="cerrarSesion.emit()">cerrar sesion</button>
+      <ion-button color="toolColor" (click)="menu.close('first');cerrarSesion.emit()" expand="full">cerrar sesión</ion-button>
+
     </ion-list>
   </ion-content>
 </ion-menu>

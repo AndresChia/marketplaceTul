@@ -4,11 +4,18 @@ import { CarritoService } from 'src/services/carrito/carrito.service';
 @Component({
   selector: 'app-popInfo',
   templateUrl: './popInfo.component.html',
-  styleUrls: ['./popInfo.component.css']
+  styleUrls: ['./popInfo.component.scss']
 })
 export class PopInfoComponent implements OnInit {
 
-  constructor(private _CarritoService: CarritoService) { }
+
+  total = 0;
+  compras = [];
+
+  constructor(private _CarritoService: CarritoService) {
+    this.compras = Array.from(this._CarritoService.getMapa())
+    this.total = this._CarritoService.getPrecioAcumulado();
+  }
 
   ngOnInit() {
 

@@ -16,7 +16,14 @@
 
 
 
-
+        .contenedorPrecio{
+            position: absolute;
+            z-index: 99;
+            top: 35px;
+            font-size: 0.8rem;
+            right: 29px;
+            display: inline-grid;
+        }
    
 
 

@@ -9,15 +9,15 @@
         </ng-container>
     </div>
 
-    <div>
+    <div class="categoriaTitleContenedor">
         <h1>{{listaCategorias[categoriaSelecionada].nombre}} </h1>
     </div>
 
     <slideCarouselComponent [listaValores]="listaCategorias[categoriaSelecionada]"
         (AgregarAlCarrito)="AgregarAlCarrito($event)"></slideCarouselComponent>
 
-    <ion-footer>
-        
+    <ion-footer style="background: #040f44;height: 50px; z-index: +1;">
+
     </ion-footer>
 
 

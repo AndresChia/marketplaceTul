@@ -18,12 +18,8 @@ export class HeaderAppComponent implements OnInit {
 
 
   constructor(private menu: MenuController, public popoverCtrl: PopoverController, private _CarritoService: CarritoService) {
-
-
-
     let sub3 = this._CarritoService.subscribe(this.carritoService.bind(this));
     this.subscriptions.add(sub3);
-
   }
 
   ngOnInit() {
