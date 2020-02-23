@@ -4,13 +4,13 @@
     <div class="contenedorCarouselCategorias">
         <ng-container *ngFor="let categoria of listaCategorias,let i=index">
             <ion-card class="ionCardCategoria" (click)="selecionarCategoria(i) ">
-                <img [src]="categoria.imagen">
+                <img style="    height: 100%;" [src]="categoria.imagen">
             </ion-card>
         </ng-container>
     </div>
 
     <div class="categoriaTitleContenedor">
-        <h1>{{listaCategorias[categoriaSelecionada].nombre}} </h1>
+        <h1>{{ listaCategorias[categoriaSelecionada] ? listaCategorias[categoriaSelecionada].nombre : 'Cargando ...'  }}  </h1>
     </div>
 
     <slideCarouselComponent [listaValores]="listaCategorias[categoriaSelecionada]"

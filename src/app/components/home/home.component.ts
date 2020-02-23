@@ -15,59 +15,52 @@ import { ToastController } from '@ionic/angular';
 export class HomeComponent implements OnInit {
 
   listaCategorias: Categoria[] = [];
-  categoriaSelecionada = 0;
+  categoriaSelecionada;
   mostrarModal = false;
   mensaje = "";
 
   constructor(public _ApiProductosService: ApiProductosService, public _AuthService: AuthService, private router: Router, private _CarritoService: CarritoService, public toastController: ToastController) {
 
-    this.listaCategorias.push({
-      nombre: "Frutas",
-      imagen: "https://image.flaticon.com/icons/svg/706/706164.svg",
-      lista: [
-        { descripcion: "Manzanas lindas", nombre: "Manzana", precio: 2, unidadesDisponibles: 0, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
-        { descripcion: "Peras lindas", nombre: "Pera", precio: 2, unidadesDisponibles: 20, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
-        { descripcion: "Duraznos lindas", nombre: "Durazno", precio: 2, unidadesDisponibles: 10, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
-        { descripcion: "Sandias lindas", nombre: "Sandia", precio: 2, unidadesDisponibles: 5, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
-        { descripcion: "Mangos lindas", nombre: "Mango", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" }
-      ]
-    });
+    // this.listaCategorias.push({
+    //   nombre: "Frutas",
+    //   imagen: "https://image.flaticon.com/icons/svg/706/706164.svg",
+    //   // lista: [
+    //   //   { descripcion: "Manzanas lindas", nombre: "Manzana", precio: 2, unidadesDisponibles: 0, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
+    //   //   { descripcion: "Peras lindas", nombre: "Pera", precio: 2, unidadesDisponibles: 20, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
+    //   //   { descripcion: "Duraznos lindas", nombre: "Durazno", precio: 2, unidadesDisponibles: 10, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
+    //   //   { descripcion: "Sandias lindas", nombre: "Sandia", precio: 2, unidadesDisponibles: 5, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
+    //   //   { descripcion: "Mangos lindas", nombre: "Mango", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" }
+    //   // ]
+    // });
 
-    this.listaCategorias.push({
-      nombre: "Celulares",
-      imagen: "https://image.flaticon.com/icons/svg/706/706164.svg",
-      lista: [
-        { descripcion: "Iphone lindas", nombre: "Iphone X", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
-        { descripcion: "Samsung lindas", nombre: "Samsung s10", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
-        { descripcion: "Nokia lindas", nombre: "Nokia 1100", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" }
-      ]
-    });
-
-
-    this.listaCategorias.push({
-      nombre: "Audifonos",
-      imagen: "https://image.flaticon.com/icons/svg/706/706164.svg",
-      lista: [
-        { descripcion: "Manzanas lindas", nombre: "Manzana", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
-        { descripcion: "Peras lindas", nombre: "Pera", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
-        { descripcion: "Duraznos lindas", nombre: "Durazno", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
-        { descripcion: "Sandias lindas", nombre: "Sandia", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
-        { descripcion: "Mangos lindas", nombre: "Mango", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" }
-      ]
-    });
+    // this.listaCategorias.push({
+    //   nombre: "Celulares",
+    //   imagen: "https://image.flaticon.com/icons/svg/706/706164.svg",
+    //   // lista: [
+    //   //   { descripcion: "Iphone lindas", nombre: "Iphone X", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
+    //   //   { descripcion: "Samsung lindas", nombre: "Samsung s10", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
+    //   //   { descripcion: "Nokia lindas", nombre: "Nokia 1100", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" }
+    //   // ]
+    // });
 
 
-    // _ApiProductosService.getCategorias().subscribe(categorias => {
-    //   categorias.map(({ payload }) => {
-    //     let imagen = payload.doc.data().imagen;
-    //     let nombre = payload.doc.id;
-    //     this.listaCategorias.push({ imagen, nombre })
-    //   })
-    //   debugger
-    // },
-    //   error => {
-    //     debugger
-    //   });
+    // this.listaCategorias.push({
+    //   nombre: "Audifonos",
+    //   imagen: "https://image.flaticon.com/icons/svg/706/706164.svg",
+    //   // lista: [
+    //   //   { descripcion: "Manzanas lindas", nombre: "Manzana", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
+    //   //   { descripcion: "Peras lindas", nombre: "Pera", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
+    //   //   { descripcion: "Duraznos lindas", nombre: "Durazno", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
+    //   //   { descripcion: "Sandias lindas", nombre: "Sandia", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" },
+    //   //   { descripcion: "Mangos lindas", nombre: "Mango", precio: 2, unidadesDisponibles: 1, imagen: "https://image.flaticon.com/icons/svg/706/706164.svg" }
+    //   // ]
+    // });
+
+
+
+    this.getCategorias();
+
+
   }
 
 
@@ -83,6 +76,9 @@ export class HomeComponent implements OnInit {
 
   selecionarCategoria(indexCategoria) {
     this.categoriaSelecionada = indexCategoria;
+    if (!this.listaCategorias[this.categoriaSelecionada].lista) {
+      this.getProductosByCategoria(this.listaCategorias[this.categoriaSelecionada].nombre);
+    }
   }
 
   AgregarAlCarrito({ cantidad, valor }) {
@@ -117,6 +113,42 @@ export class HomeComponent implements OnInit {
       duration: 2000
     });
     toast.present();
+  }
+
+
+  getProductosByCategoria(categoria) {
+    let categoriaActual = this.listaCategorias.findIndex(element => element.nombre == categoria);
+    this._ApiProductosService.getProductosByCategoria(categoria).subscribe(lista => {
+      this.listaCategorias[categoriaActual].lista = [];
+      lista.map(({ payload }) => {
+        let data = payload.doc.data();
+        data.selectNumber = Array(data.unidadesDisponibles).fill(1).map((x,i)=>i);
+        this.listaCategorias[categoriaActual].lista.push(data);
+      })
+    },
+      error => {
+        this.presentToast("Error inesperado getProductosByCategoria");
+      });
+
+  }
+
+  getCategorias() {
+    this._ApiProductosService.getCategorias().subscribe(categorias => {
+      categorias.map(({ payload }) => {
+        let imagen = payload.doc.data().imagen;
+        let nombre = payload.doc.id;
+        this.listaCategorias.push({ imagen, nombre });
+      });
+
+
+      if (isNullOrUndefined(this.categoriaSelecionada)) {
+        this.categoriaSelecionada=0;
+        this.getProductosByCategoria(this.listaCategorias[0].nombre);
+      }
+
+    }, error => {
+      this.presentToast("Error inesperado getCategorias");
+    });
   }
 
 }

@@ -6,9 +6,9 @@
 
 
 
-    img{
-        width: 145px;
-    }
+    // img{
+    //     width: 21%;
+    // }
 
 
     .contenedorIon{
@@ -53,6 +53,24 @@
             }
             
         }
+
+
+        .buttonComprar{
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+        }
+        
+
+        .contenedorImagen{
+            height: 154px;
+            img{
+                position: relative;
+            }
+        }
+        
+
+
     }
 
 }

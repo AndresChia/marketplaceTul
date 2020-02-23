@@ -13,13 +13,15 @@ export class SlideCarouselComponent implements OnInit {
 
   unidades = [];
 
+
   @Input() listaValores;
 
   @Output() AgregarAlCarrito = new EventEmitter<any>();
 
   // indexList=[0];
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
   }
@@ -30,6 +32,12 @@ export class SlideCarouselComponent implements OnInit {
 
     this.slides.slideTo(0, 500);
     this.unidades = [];
+
+    // if(changes.listaValores.currentValue){
+
+    //   this.selectNumber=Array(5).fill(this.listaValores.lista.).map((x,i)=>i)
+
+    // }
 
 
   }

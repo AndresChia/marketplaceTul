@@ -3,28 +3,38 @@
 
 
 
-    <div class="contenedorImg">
-        <img class="imgLogo" src="../../../../assets/image/logo2.png" alt="">
 
+
+    <div class="contenedorInput">
+        <div class="iconcontent iconEmail">
+            <img src="../../../../assets/image/correo.png" alt="">
+        </div>
+        <input type="email" class="email" name="email" [(ngModel)]="datos.email" placeholder="Correo electronico"
+            required="required">
     </div>
 
 
-    <div style="    height: 19px;">
-        <span style="color: black">{{datos.email ? 'Correo electronico:' : ''}} </span>
+    <div class="contenedorInput">
+        <div class="iconcontent iconPassword">
+            <img src="../../../../assets/image/bloquear.png" alt="">
+        </div>
+        <input type="password" class="password" name="password" [(ngModel)]="datos.contrasena" placeholder="Contraseña"
+            required="required">
     </div>
 
-    <input type="email" class="email" name="email" [(ngModel)]="datos.email" placeholder="Correo electronico"
-        required="required">
-
-
-
-
-    <div style="height: 19px;">
-        <span style="color: black">{{datos.contrasena ? 'Contraseña:' : '' }} </span>
+    <div class="contenedorRep">
+        <div style="display: inline-flex; margin-left: 6px;">
+            <ion-checkbox color="toolColor"></ion-checkbox>Recuerdame
+        </div>
+        <a (click)="abrirPopUp()">Olvidaste tu contraseña?</a>
     </div>
 
-    <input type="password" class="password" name="password" [(ngModel)]="datos.contrasena" placeholder="Contraseña"
-        required="required">
+
 
 
 </div>
+
+
+<ng-container *ngIf="mostrarModal">
+    <app-modalRecuperarPassword (cerrarPopUp)="cerrarPopUp()" ></app-modalRecuperarPassword>
+</ng-container>

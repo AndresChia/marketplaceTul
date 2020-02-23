@@ -1,5 +1,5 @@
 <div>
-  <div class="contenedorFila" *ngFor="let item of compras">
+  <div class="contenedorFila" *ngFor="let item of compras;let j=index">
 
     <div class="elementoFilaNombre">
       {{item[0]}}
@@ -14,7 +14,14 @@
     </div>
 
     <div class="elementoFilaCantidad centrar">
-      {{item[1].cantidad}}
+      
+      <ion-select [placeholder]="item[1].cantidad" [(ngModel)]="cantidades[j]" (ngModelChange)="cambioCantidad(j)">
+        <ng-container *ngFor="let item of item[1].producto.selectNumber;let i=index">
+          <ion-select-option [value]="i">{{i}}</ion-select-option>
+        </ng-container>
+
+      </ion-select>
+
     </div>
 
   </div>

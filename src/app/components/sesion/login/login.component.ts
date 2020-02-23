@@ -9,6 +9,7 @@ export class LoginComponent implements OnInit {
 
   email;
   contrasena;
+  mostrarModal=false;
 
   @Input() datos;
 
@@ -16,6 +17,14 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  abrirPopUp(){
+    this.mostrarModal=true;
+  }
+
+  cerrarPopUp(){
+    this.mostrarModal=false;
   }
 
   

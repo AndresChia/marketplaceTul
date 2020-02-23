@@ -36,6 +36,8 @@
 }
 
 .categoriaTitleContenedor{
-    box-shadow: 0 0 3px 1px #c1bdbd;
+    box-shadow: 0 0 3px 1px #1b1212;;
     text-align: center;
+    background: #040f44;
+    color: white;
 }

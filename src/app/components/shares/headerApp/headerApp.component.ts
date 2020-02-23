@@ -18,8 +18,8 @@ export class HeaderAppComponent implements OnInit {
 
 
   constructor(private menu: MenuController, public popoverCtrl: PopoverController, private _CarritoService: CarritoService) {
-    let sub3 = this._CarritoService.subscribe(this.carritoService.bind(this));
-    this.subscriptions.add(sub3);
+    let sub = this._CarritoService.subscribe(this.carritoService.bind(this));
+    this.subscriptions.add(sub);
   }
 
   ngOnInit() {
@@ -31,12 +31,14 @@ export class HeaderAppComponent implements OnInit {
 
   async abrirCarrito(eventoClick) {
     let popover = await this.popoverCtrl.create({ component: PopInfoComponent, event: eventoClick });
+    popover.style.cssText = '--min-width: 321px; --max-width: 370px;';
     await popover.present();
   }
 
 
   carritoService(evento) {
     this.numeroCompras = evento.numeroDeProductos;
+    debugger
   }
 
 }

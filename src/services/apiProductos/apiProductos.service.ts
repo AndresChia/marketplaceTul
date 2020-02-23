@@ -30,7 +30,7 @@ export class ApiProductosService {
   }
 
   getProductosByCategoria(categoria) {
-    return this.categoria = this.db.collection<any>('Categorias', ref => ref.where('tipo', '==', categoria)).snapshotChanges();
+    return this.categoria = this.db.collection<any>('productos', ref => ref.where('tipo', '==', categoria)).snapshotChanges();
   }
 
 }
